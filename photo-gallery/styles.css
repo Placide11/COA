@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    justify-content: center;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 200px;
+    max-width: 300px;
+    min-width: 200px;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.caption h1 {
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.caption p {
+    color: rgb(125, 125, 125);
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+.caption a {
+    display: none;
+}
+
+.caption a::after {
+    content: '\2192';
+    transition: transform 0.2s;
+    position: absolute;
+    right: -20px;
+}
+
+.caption a:hover::after {
+    transform: translateX(5px);
+}
+
+.item:hover img {
+    filter: blur(4px) grayscale(100%) brightness(0.5);
+    transform: scale(1.05);
+    transition:  0.5s ease;
+}
+
+.item:hover .caption a {
+    display: inline;
+    font-size: 14px;
+    color: #00BFFF;
+    text-decoration: none;
+    position: relative;
+    transform: scale(1.2);
+}
+
